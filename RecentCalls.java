@@ -29,9 +29,9 @@ public class RecentCalls { //stack
     }
 
 
-    public void display() { // show most recent call on top
-        System.out.println("Elements in the stack:");
-        if (isEmpty()) {
+    public void displayRecent() {
+        System.out.println("List of recent calls:");
+        if (top == -1) {
             System.out.println("No calls were made");
             return;
         }
@@ -39,7 +39,7 @@ public class RecentCalls { //stack
             System.out.println(callStack[i].name + " was called at number: " + callStack[i].number);
         }
     }
-
+    
     private boolean isFull(){
         return top >= size-1;
     }
