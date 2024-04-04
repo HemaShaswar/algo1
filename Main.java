@@ -16,22 +16,28 @@ public class Main {
             choice = input.nextInt();
             switch (choice) {
                 case 1:
+                    //Time Complexity = O(n)
                     contacts.addContact(getContactName(),getContactNumber());
                     break;
                 case 2:
+                    //Time Complexity = O(n log n)
                     contacts.displayContactList();
                     break;
                 case 3:
+                    //Time Complexity = O(n)
                     Contact recent = contacts.callContact(getContactName());
                     recentCalls.addCaller(recent); // adding caller to recent contacts
                     break;
                 case 4:
+                    //Time Complexity = O(n)
                     recentCalls.displayRecent();
                     break;
                 case 5:
+                    //Time Complexity = O(n)
                     contacts.deleteContact(getContactName());
                     break;
                 case 6:
+                    //Time Complexity = O(n)
                     contacts.modifyContactName(getContactName());
                     break;
                 case 0:
