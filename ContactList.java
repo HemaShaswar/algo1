@@ -1,3 +1,6 @@
+// Hema Shaswar Rasool hs21123 section 3
+// Yad Hawar Hiwa yh21145 section 2
+
 import java.util.Scanner;
 
 public class ContactList { //Singley Linked List
@@ -13,6 +16,8 @@ public class ContactList { //Singley Linked List
     };
 
     //adds new contact to the end of the list if name is not duplicated
+
+    // Time Complexity = O(n) Because it uses findContact
     public void addContact(String name, String number){
         Contact newContact = new Contact(name, number);
         if (this.size == 0) {
@@ -32,6 +37,7 @@ public class ContactList { //Singley Linked List
     }
     }
 
+    // Time Complexity = O(n) Because it uses findContact
     public void deleteContact(String deleteName) {
         Contact deleteContact = findContact(deleteName);
         if (deleteContact != null) {
@@ -52,6 +58,7 @@ public class ContactList { //Singley Linked List
         System.out.println("Provided Name Does Not Exist in the Contact List");
     }
 
+    // Time Complexity = O(n) Because it uses findContact
     public Contact callContact(String callName){
         Contact callContact = findContact(callName);
         if (callContact != null) {
@@ -63,6 +70,7 @@ public class ContactList { //Singley Linked List
         return null;
     };
 
+    // Time Complexity = O(n) Because it uses findContact
     public void modifyContactName(String oldContactName){
         String newName;
         Contact oldContact = findContact(oldContactName);
@@ -79,21 +87,7 @@ public class ContactList { //Singley Linked List
         }
     }
 
-    public void modifyContactNumber(String oldContactNumber){
-        String newNumber;
-        Contact oldContact = findContact(oldContactNumber);
-        System.out.print("Please enter the new number: ");
-        newNumber = input.nextLine();
-        if (oldContact != null) {
-            if (findContact(newNumber) == null){
-                oldContact.number = newNumber;
-            } else {
-                System.out.println("Contact number Already exists. Please choose a different number");
-        }
-        } else {
-            System.out.println("Please enter a valid number. (Null space not accepted)");}
-    }
-
+    // Time Complexity = O(n log n) 
     public void displayContactList() {
         this.sort();
         Contact current = this.head;
@@ -126,6 +120,8 @@ public class ContactList { //Singley Linked List
 
     //searches for contact by name
     //returns searched contact or null if not found
+
+    // Time Complexity = O(n) 
     public Contact findContact(String name) {
         Contact currentContact = head;
         while (currentContact != null) {
@@ -137,6 +133,7 @@ public class ContactList { //Singley Linked List
         return null; // Contact not found
     }
 
+    // Time Complexity = O(n log n) 
     private void sort() {
         head = mergeSort(head);
         Contact temp = head;
@@ -147,6 +144,7 @@ public class ContactList { //Singley Linked List
         tail = temp;
     }
 
+    // Time Complexity = O(n log n) 
     private Contact mergeSort(Contact head) {
 
         if (head == null || head.next == null) {
@@ -163,6 +161,7 @@ public class ContactList { //Singley Linked List
         return merge(left, right);
     }
 
+    // Time Complexity = O(log n) 
     private Contact merge(Contact left, Contact right) {
 
         if (left == null) return right;
@@ -187,6 +186,8 @@ public class ContactList { //Singley Linked List
     }
 
     // Find the middle Contact of the list
+
+    // Time Complexity = O(n) 
     private Contact getMiddle(Contact head) {
         if (head == null) return head;
 
