@@ -1,3 +1,6 @@
+// Hema Shaswar Rasool hs21123 section 3
+// Yad Hawar Hiwa yh21145 section 2
+
 import java.util.Scanner;
 
 public class Main {
