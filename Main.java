@@ -33,7 +33,6 @@ public class Main {
                     break;
                 case 6:
                     contacts.modifyContactName(getContactName());
-                    contacts.modifyContactNumber(getContactNumber());
                     break;
                 case 0:
                     System.out.println("Exiting...");
