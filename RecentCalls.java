@@ -28,7 +28,7 @@ public class RecentCalls { //stack
         top--;
     }
 
-
+    //Time Complexity = O(n)
     public void displayRecent() {
         System.out.println("List of recent calls:");
         if (top == -1) {
